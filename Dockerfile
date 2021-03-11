@@ -26,6 +26,7 @@ RUN git clone -b v${OSTICKET_VERSION} --depth 1 https://github.com/osTicket/osTi
 && cd osTicket \
 && cp -R * /var/www/html/ \
 && mv /var/www/html/setup /var/www/html/setup_hidden \
+&& mkdir /var/www/html/attachments \
 && rm -r /var/www/html/index.html
 
 # COPY Conf to /etc/apache2/sites-enabled/

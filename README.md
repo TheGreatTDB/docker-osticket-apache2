@@ -34,7 +34,7 @@ git clone https://github.com/TheGreatTDB/docker-osticket-apache2.git
 ```
 
 ```bash
-cd docker-osticket
+cd docker-osticket-apache2
 ```
 
 ```bash
