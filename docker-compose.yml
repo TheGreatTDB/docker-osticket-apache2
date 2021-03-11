@@ -1,0 +1,36 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    volumes:
+      - /docker/osticket/mysql:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: pragosa@tickets
+      MYSQL_DATABASE: osticket
+      MYSQL_USER: osticket
+      MYSQL_PASSWORD: pragosa@tickets
+
+  phpmyadmin:
+     image: phpmyadmin/phpmyadmin
+     container_name: phpmyadmin
+     ports:
+      - 80
+     environment:
+      PMA_HOSTS: mysql
+      MYSQL_ROOT_PASSWORD: pragosa@tickets
+
+  osticket:
+    image: pragosa/osticket:testev7
+    container_name: osticket
+    volumes:
+      - /var/www
+    restart: always
+    ports:
+      - 80
+    environment:
+      MYSQL_HOST: mysql5
+      MYSQL_DATABASE: osticket
+      MYSQL_USER: osticket
+      MYSQL_PASSWORD: pragosa@tickets
