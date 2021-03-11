@@ -36,7 +36,8 @@ COPY files/ /
 RUN ln -s /usr/bin/local/etc/php/php-apache2.ini /etc/php/7.4/apache2/conf.d/99-osticket.ini \
 && chown -R www-data:www-data /var/www/ \
 && chown www-data:www-data /var/www/ && chmod g+rx /var/www/ \
-&& chmod -R 777 /usr/bin/
+&& chmod -R 777 /usr/bin/ \
+&& chmod -R 777 /attachments
 
 VOLUME ["/attachments"]
 EXPOSE 80
