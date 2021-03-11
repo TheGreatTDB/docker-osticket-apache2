@@ -24,19 +24,20 @@ RUN apt-get install -y apache2 \
 # INSTALL OSTICKET
 RUN git clone -b v${OSTICKET_VERSION} --depth 1 https://github.com/osTicket/osTicket.git \
 && cd osTicket \
-&& cp -R * /var/www/html/ \
+&& php manage.php deploy -sv /var/www/html \
 && mv /var/www/html/setup /var/www/html/setup_hidden \
-&& mkdir /var/www/html/attachments \
+&& mkdir /attachments \
 && rm -r /var/www/html/index.html
 
 # COPY Conf to /etc/apache2/sites-enabled/
 COPY files/ /
 
 # RELOAD FILES AND RESTART SERVICE
-RUN chown -R www-data:www-data /var/www/ \
+RUN ln -s /usr/bin/local/etc/php/php-apache2.ini /etc/php/7.4/apache2/conf.d/99-osticket.ini \
+&& chown -R www-data:www-data /var/www/ \
 && chown www-data:www-data /var/www/ && chmod g+rx /var/www/ \
 && chmod -R 777 /usr/bin/
 
-VOLUME ["/var/www/html/"]
+VOLUME ["/attachments"]
 EXPOSE 80
 CMD ["/usr/bin/start.sh"]
