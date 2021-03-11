@@ -1242,6 +1242,10 @@ a.print {
     padding:2px;
 }
 
+input[type=text]{
+    width: 98%;
+}
+
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -1282,6 +1286,7 @@ a.print {
 }
 
 .form_table {
+    width: 100% !important;
     margin-top:3px;
     border-left:1px solid #ddd;
     border-right:1px solid #ddd;
@@ -1469,6 +1474,7 @@ h3.title > .sub-title {
 
 .ticket_info {
     background:#F4FAFF;
+    width: 100% !important;
 }
 
 .ticket_info.custom-data thead th {
@@ -2538,6 +2544,7 @@ select + .button {
   border-right:none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  width: 87%;
 }
 .input.attached .button.attached {
   height: 100%;
@@ -3134,10 +3141,8 @@ tr i.help-tip.warning {
     font-weight: bold;
 }
 .truncate {
-    width: 100%;
     display: inline-block;
     max-width: 100% !important;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     vertical-align: bottom;
@@ -3234,6 +3239,7 @@ td.indented {
 }
 .sticky.bar .content {
   margin: auto;
+  width: 100%;
 }
 .sticky.bar.fixed .notsticky {
   display: none !important;
