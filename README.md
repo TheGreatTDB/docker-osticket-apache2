@@ -30,7 +30,7 @@ docker run --name pragosa_osticket_mysql -d -e MYSQL_ROOT_PASSWORD=pragosa@ticke
 ```
 
 ```bash
-git clone https://github.com/TheGreatTDB/docker-osticket
+git clone https://github.com/TheGreatTDB/docker-osticket-apache2.git
 ```
 
 ```bash
