@@ -22,10 +22,10 @@ services:
       MYSQL_ROOT_PASSWORD: pragosa@tickets
 
   osticket:
-    image: pragosa/osticket:testev7
+    image: pragosa/osticket:1.15.1
     container_name: osticket
     volumes:
-      - /var/www
+      - /var/www/html/
     restart: always
     ports:
       - 80

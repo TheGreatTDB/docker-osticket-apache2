@@ -1,5 +1,5 @@
 # Introduction
-Docker image for running version 1.15.2 of [OSTicket](http://osticket.com/).
+Docker image for running version 1.15.1 of [OSTicket](http://osticket.com/).
 
 This image has been inspired from CampbellSoftware image [CampbellSoftwareSolutions](https://github.com/CampbellSoftwareSolutions/docker-osticket).
 
@@ -38,11 +38,11 @@ cd docker-osticket
 ```
 
 ```bash
-sudo docker build -t pragosa/osticket:1.15.2 .
+sudo docker build -t pragosa/osticket:1.15.1 .
 ```
 
 ```bash
-docker run --name pragosa_osticket -d --link pragosa_osticket_mysql:mysql -p 8080:80 pragosa/osticket:1.15.2
+docker run --name pragosa_osticket -d --link pragosa_osticket_mysql:mysql -p 8080:80 pragosa/osticket:1.15.1
 ```
 
 Wait for the installation to complete then browse to your OSTicket staff control panel at `http://localhost:8080/scp/`. Login with default admin user & password:
@@ -56,7 +56,7 @@ passwords above and read the rest of this documentation!
 Note (1): If you want to change the environmental database variables on the OSTicket image to run, you can do it as follows.
 
 ```bash
-docker run --name pragosa_osticket -d -e MYSQL_ROOT_PASSWORD=new_root_password -e MYSQL_USER=new_root_user -e MYSQL_PASSWORD=new_secret -e MYSQL_DATABASE=osticket --link osticket_mysql:mysql -p 8080:80 pragosa/osticket:1.15.2
+docker run --name pragosa_osticket -d -e MYSQL_ROOT_PASSWORD=new_root_password -e MYSQL_USER=new_root_user -e MYSQL_PASSWORD=new_secret -e MYSQL_DATABASE=osticket --link osticket_mysql:mysql -p 8080:80 pragosa/osticket:1.15.1
 ```
 
 Note (2): OSTicket automatically redirects `http://localhost:8080/scp` to `http://localhost/scp/`. Either serve this on port 80 or don't omit the
@@ -261,13 +261,3 @@ User name to use for automatically created administrative user. Defaults to 'pra
 `ADMIN_PASSWORD`
 
 Password to use for automatically created administrative user. Defaults to 'admin'.
-
-# Modifications
-
-This image was put together relatively quickly and could probably be improved to meet other use cases.
-
-Please feel free to open an issue if you have any changes you would like to see. All pull requests are also appreciated!
-
-# License
-
-This image and source code is made available under the MIT licence. See the LICENSE file for details.
